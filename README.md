@@ -39,3 +39,4 @@ The device id is a UUID stored in `localStorage` (`acadium.device_id`); the JWT 
 - `PLAN.md` — routes, API mapping, architecture decisions
 - `DESIGN_TOKENS.md` — colors, fonts, radii, shadows taken from the landing page
 - `BACKEND_TODO.md` — missing endpoints/fields for the Go backend
+# acadium_web
