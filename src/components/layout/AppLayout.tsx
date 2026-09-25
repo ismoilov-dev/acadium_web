@@ -1,7 +1,7 @@
 import { Menu } from 'lucide-react'
 import { useEffect, useState, type ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Link, Outlet, useLocation } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
 import { Dialog, DialogDescription, DialogTitle, SheetContent } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
@@ -21,7 +21,6 @@ export function AppLayout({
   topbarEnd?: ReactNode
 }) {
   const { t } = useTranslation()
-  const location = useLocation()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [collapsed, setCollapsed] = useState(() => {
     try {
@@ -38,8 +37,6 @@ export function AppLayout({
       /* ignore */
     }
   }, [collapsed])
-
-  useEffect(() => setMobileOpen(false), [location.pathname])
 
   return (
     <div className="flex min-h-dvh">

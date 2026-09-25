@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next'
 
 import { cn } from '@/lib/utils'
 
-export const WEEKDAYS = [1, 2, 3, 4, 5, 6, 7] as const
+const WEEKDAYS = [1, 2, 3, 4, 5, 6, 7] as const
 
 /** ISO weekday chips: 1 = Monday … 7 = Sunday (Du Se Ch Pa Ju Sh Ya). */
 export function WeekdayPicker({

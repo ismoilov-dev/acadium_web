@@ -1,52 +1,37 @@
 import { getDeviceId, getDeviceName } from '@/lib/device'
-import type { LoginResult, User } from '@/types'
+import { rec, str } from '@/lib/normalize'
+import type { LoginResult } from '@/types'
 
-import { api, asArray } from './client'
-
-export interface LoginResponse {
-  is_trusted?: boolean
-  token?: string
-  user?: User
-  message?: string
-  request_id?: string
-}
+import { api } from './client'
+import { listOf, parseDevice, parseDeviceRequest, parseUser } from './parsers'
 
 export const authApi = {
   async login(phone: string): Promise<LoginResult> {
-    const res = await api.post<LoginResponse>('/auth/login', {
-      phone,
-      device_id: getDeviceId(),
-      device_name: getDeviceName(),
-      platform: 'WEB',
-    })
-    if (res.token) return { is_trusted: true, token: res.token, user: res.user }
-    return { is_trusted: false, message: res.message, request_id: res.request_id }
+    const res = rec(
+      await api.post<unknown>('/auth/login', {
+        phone,
+        device_id: getDeviceId(),
+        device_name: getDeviceName(),
+        platform: 'WEB',
+      }),
+    )
+    const token = str(res, ['token', 'access_token'], [])
+    if (token) return { is_trusted: true, token, user: res.user ? parseUser(res.user) : undefined }
+    return {
+      is_trusted: false,
+      message: str(res, 'message', []),
+      request_id: str(res, 'request_id', []),
+    }
   },
-  me: () => api.get<User>('/auth/me'),
+  me: async () => {
+    const res = rec(await api.get<unknown>('/auth/me'))
+    return parseUser(res.user ?? res)
+  },
   logout: () => api.post<unknown>('/auth/logout'),
-  devices: async () => asArray(await api.get<Device[] | null>('/auth/devices')),
+  devices: async () => listOf(parseDevice)(await api.get<unknown>('/auth/devices')),
   revokeDevice: (id: string) => api.delete<unknown>(`/auth/devices/${id}`),
   deviceRequests: async () =>
-    asArray(await api.get<DeviceRequest[] | null>('/auth/device-requests')),
+    listOf(parseDeviceRequest)(await api.get<unknown>('/auth/device-requests')),
   approveRequest: (id: string) => api.post<unknown>(`/auth/device-requests/${id}/approve`),
   rejectRequest: (id: string) => api.post<unknown>(`/auth/device-requests/${id}/reject`),
-}
-
-export interface Device {
-  id: string
-  device_id?: string
-  device_name?: string | null
-  platform?: string | null
-  is_trusted?: boolean
-  last_login_at?: string | null
-  created_at?: string
-}
-
-export interface DeviceRequest {
-  id: string
-  device_id?: string
-  device_name?: string | null
-  platform?: string | null
-  status?: string
-  created_at?: string
 }

@@ -1,6 +1,6 @@
 import { useMutation } from '@tanstack/react-query'
-import { ArrowLeft, Clock, Loader2, RotateCw, ShieldCheck, Smartphone } from 'lucide-react'
-import { useEffect, useRef, useState, type FormEvent } from 'react'
+import { ArrowLeft, Clock, Info, RotateCw, ShieldCheck, Smartphone } from 'lucide-react'
+import { useState, type FormEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Navigate } from 'react-router-dom'
 
@@ -17,8 +17,6 @@ import { formatPhone, isValidPhone, toApiPhone } from '@/lib/phone'
 
 import { useAuth } from './AuthProvider'
 
-const AUTO_RETRY_MS = 5000
-
 export default function LoginPage() {
   const { t } = useTranslation()
   const { token, signIn } = useAuth()
@@ -30,12 +28,13 @@ export default function LoginPage() {
   const login = useMutation({
     mutationFn: (phone: string) => authApi.login(phone),
     onSuccess: (res, phone) => {
-      setFormError(null)
       if (res.is_trusted) {
+        setFormError(null)
         signIn(res.token)
-      } else {
-        setPending({ phone, requestId: res.request_id })
+        return
       }
+      setFormError(pending ? t('auth.pending.still') : null)
+      setPending({ phone, requestId: res.request_id })
     },
     onError: (err) => {
       setFormError(loginErrorMessage(err))
@@ -51,17 +50,6 @@ export default function LoginPage() {
     }
     return errorMessage(err, t)
   }
-
-  // While waiting for approval, silently re-check every few seconds.
-  const loginRef = useRef(login)
-  loginRef.current = login
-  useEffect(() => {
-    if (!pending) return
-    const id = window.setInterval(() => {
-      if (!loginRef.current.isPending) loginRef.current.mutate(pending.phone)
-    }, AUTO_RETRY_MS)
-    return () => window.clearInterval(id)
-  }, [pending])
 
   if (token) return <Navigate to="/" replace />
 
@@ -156,9 +144,9 @@ export default function LoginPage() {
                 ))}
               </ol>
 
-              <p className="mt-4 flex items-center gap-2 text-sm text-ink-soft">
-                <Loader2 className="size-4 animate-spin text-primary" />
-                {t('auth.pending.auto')}
+              <p className="mt-4 flex items-start gap-2 text-sm text-ink-soft">
+                <Info className="mt-0.5 size-4 shrink-0 text-primary" />
+                {t('auth.pending.hint')}
               </p>
 
               {formError && (

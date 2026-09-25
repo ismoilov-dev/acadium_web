@@ -22,7 +22,9 @@
     "none": "Yo‘q",
     "optional": "ixtiyoriy",
     "viewAll": "Barchasini ko‘rish",
-    "details": "Batafsil"
+    "details": "Batafsil",
+    "loading": "Yuklanmoqda…",
+    "urlOnlyHint": "Hozircha fayl yuklash yo‘q — tayyor havolani joylang."
   },
   "nav": {
     "aria": "Asosiy navigatsiya",
@@ -75,11 +77,12 @@
       "text": "{{phone}} raqami uchun yangi qurilmadan kirish so‘rovi yuborildi. Xavfsizlik uchun uni allaqachon ishonchli bo‘lgan qurilmadan tasdiqlash kerak.",
       "step1": "Telefoningizda Acadium ilovasini oching",
       "step2": "“Qurilmalar” bo‘limida yangi so‘rovni toping: {{device}}",
-      "step3": "“Tasdiqlash” tugmasini bosing — panel avtomatik ochiladi",
-      "auto": "Tasdiqlanishini kutyapmiz, har 5 soniyada tekshiriladi…",
-      "retry": "Qayta tekshirish",
+      "step3": "“Tasdiqlash” tugmasini bosing, so‘ng bu yerda “Tasdiqladim — kirish” ni bosing",
+      "retry": "Tasdiqladim — kirish",
       "back": "Boshqa raqam",
-      "requestId": "So‘rov ID"
+      "requestId": "So‘rov ID",
+      "hint": "Har bir urinish yangi so‘rov yaratadi, shuning uchun avval telefonda tasdiqlang, keyin tugmani bosing.",
+      "still": "Hali tasdiqlanmadi. Telefonda eng so‘nggi so‘rovni tasdiqlang va qayta bosing."
     },
     "mobileOnly": {
       "title": "Mobil ilovadan foydalaning",
@@ -121,7 +124,15 @@
     "next": "Keyingi"
   },
   "weekdays": {
-    "short": { "1": "Du", "2": "Se", "3": "Ch", "4": "Pa", "5": "Ju", "6": "Sh", "7": "Ya" },
+    "short": {
+      "1": "Du",
+      "2": "Se",
+      "3": "Ch",
+      "4": "Pa",
+      "5": "Ju",
+      "6": "Sh",
+      "7": "Ya"
+    },
     "long": {
       "1": "Dushanba",
       "2": "Seshanba",
@@ -136,9 +147,168 @@
     "today": "Bugungi davomat",
     "present": "Kelgan",
     "late": "Kechikkan",
-    "absent": "Kelmagan"
+    "absent": "Kelmagan",
+    "status": {
+      "PRESENT": "Kelgan",
+      "LATE": "Kechikkan",
+      "ABSENT": "Kelmagan",
+      "UNKNOWN": "Noma’lum"
+    }
   },
   "payments": {
     "soon": "To‘lovlar va qarzdorlikni kuzatish moduli ishlab chiqilmoqda."
+  },
+  "fields": {
+    "name": "F.I.Sh.",
+    "firstName": "Ism",
+    "lastName": "Familiya",
+    "phone": "Telefon",
+    "group": "Guruh",
+    "groupName": "Guruh nomi",
+    "status": "Holat",
+    "createdAt": "Qo‘shilgan sana",
+    "description": "Tavsif",
+    "specialization": "Mutaxassislik",
+    "avatarUrl": "Rasm havolasi",
+    "onlineUrl": "Onlayn dars havolasi",
+    "teacher": "O‘qituvchi"
+  },
+  "status": {
+    "ACTIVE": "Faol",
+    "BLOCKED": "Bloklangan",
+    "INACTIVE": "Nofaol"
+  },
+  "students": {
+    "subtitle": "Markazdagi jami o‘quvchilar: {{count}} ta",
+    "search": "Ism, telefon yoki guruh bo‘yicha qidirish…",
+    "add": "O‘quvchi qo‘shish",
+    "addHint": "O‘quvchi shu raqam orqali Acadium mobil ilovasiga kira oladi.",
+    "added": "O‘quvchi qo‘shildi",
+    "groupHint": "Keyinroq ham guruhga biriktirish mumkin.",
+    "empty": "Hali o‘quvchilar yo‘q",
+    "emptyHint": "Birinchi o‘quvchini qo‘shing — u darhol mobil ilovaga kira oladi.",
+    "detail": "O‘quvchi ma’lumotlari",
+    "editProfile": "Shaxsiy ma’lumotlar",
+    "phoneLocked": "Telefon raqamini o‘zgartirib bo‘lmaydi — u kirish uchun ishlatiladi.",
+    "changeGroup": "Guruhni almashtirish",
+    "move": "Ko‘chirish",
+    "moved": "O‘quvchi guruhga ko‘chirildi",
+    "tabs": {
+      "profile": "Profil",
+      "grades": "Baholar",
+      "attendance": "Davomat",
+      "parents": "Ota-onalar"
+    },
+    "noGrades": "Baholar hali yo‘q",
+    "noGradesHint": "O‘qituvchi baho qo‘ygach, shu yerda ko‘rinadi.",
+    "noAttendance": "Davomat yozuvlari yo‘q",
+    "noAttendanceHint": "O‘quvchi markazga kelib, ilova orqali belgilanganda paydo bo‘ladi.",
+    "noParents": "Ota-ona biriktirilmagan",
+    "noParentsHint": "“Ota-onalar” bo‘limida ota-ona qo‘shib, shu farzandni tanlang."
+  },
+  "teachers": {
+    "subtitle": "Jami o‘qituvchilar: {{count}} ta",
+    "add": "O‘qituvchi qo‘shish",
+    "addHint": "O‘qituvchi shu raqam bilan veb-panelga kirib, vazifa va baholarni boshqaradi.",
+    "added": "O‘qituvchi qo‘shildi",
+    "edit": "O‘qituvchini tahrirlash",
+    "editHint": "Ism, mutaxassislik va rasmni yangilang.",
+    "specPlaceholder": "Masalan: IELTS, Matematika",
+    "empty": "Hali o‘qituvchilar yo‘q",
+    "emptyHint": "O‘qituvchi qo‘shing — u guruhlar, vazifalar va baholarni yuritadi.",
+    "detail": "O‘qituvchi ma’lumotlari",
+    "groups": "Guruhlari",
+    "noGroups": "Guruh biriktirilmagan",
+    "noGroupsHint": "Guruhga o‘qituvchi biriktirish tez orada qo‘shiladi."
+  },
+  "parents": {
+    "subtitle": "Jami ota-onalar: {{count}} ta",
+    "add": "Ota-ona qo‘shish",
+    "addHint": "Ota-ona mobil ilovada farzandining davomati, vazifalari va baholarini kuzatadi.",
+    "added": "Ota-ona qo‘shildi",
+    "children": "Farzandlari",
+    "childrenHint": "Bir nechta farzandni tanlash mumkin.",
+    "pickChildren": "Farzandlarni tanlang",
+    "childrenSelected": "{{count}} ta farzand tanlandi",
+    "empty": "Hali ota-onalar yo‘q",
+    "emptyHint": "Ota-onani qo‘shing va farzandlariga bog‘lang."
+  },
+  "groups": {
+    "subtitle": "Jami guruhlar: {{count}} ta",
+    "create": "Guruh yaratish",
+    "created": "Guruh yaratildi",
+    "edit": "Guruhni tahrirlash",
+    "updated": "Guruh yangilandi",
+    "deleted": "Guruh o‘chirildi",
+    "detail": "Guruh",
+    "formHint": "Dars kunlari va vaqti dars jadvalida ko‘rinadi.",
+    "namePlaceholder": "Masalan: Ingliz tili, B1",
+    "days": "Dars kunlari",
+    "start": "Boshlanish",
+    "end": "Tugash",
+    "onlineHint": "Zoom, Google Meet yoki Jitsi havolasi — o‘quvchilar ilovadan kirishadi.",
+    "teacherPick": "O‘qituvchini tanlang",
+    "teacherSoon": "Guruhga o‘qituvchi biriktirish API’si hali tayyor emas.",
+    "pick": "Guruhni tanlang",
+    "noGroup": "Guruhsiz",
+    "allGroups": "Barcha guruhlar",
+    "empty": "Hali guruhlar yo‘q",
+    "emptyHint": "Birinchi guruhni yarating: nomi, dars kunlari va vaqti.",
+    "emptyTeacher": "Sizga hali guruh biriktirilmagan.",
+    "today": "Bugun",
+    "online": "Onlayn dars",
+    "joinOnline": "Onlayn darsga kirish",
+    "studentsCount": "{{count}} o‘quvchi",
+    "weekly": "Haftalik jadval",
+    "addExisting": "Mavjud o‘quvchini qo‘shish",
+    "addExistingHint": "Tanlangan o‘quvchi “{{name}}” guruhiga ko‘chiriladi.",
+    "pickStudent": "O‘quvchini tanlang",
+    "noStudents": "Guruhda o‘quvchilar yo‘q",
+    "noStudentsHint": "Yangi o‘quvchi qo‘shing yoki mavjudini shu guruhga ko‘chiring.",
+    "deleteTitle": "“{{name}}” guruhini o‘chirasizmi?",
+    "deleteText": "Guruh va unga bog‘liq jadval o‘chiriladi. O‘quvchilar guruhsiz qoladi. Bu amalni qaytarib bo‘lmaydi."
+  },
+  "homework": {
+    "create": "Vazifa berish",
+    "created": "Vazifa yaratildi. O‘quvchilar va ota-onalarga bildirishnoma yuborildi.",
+    "updated": "Vazifa yangilandi",
+    "deleted": "Vazifa o‘chirildi",
+    "deadline": "Muddat",
+    "empty": "Hali vazifalar yo‘q",
+    "active": "Faol",
+    "closed": "Muddati o‘tgan"
+  },
+  "grades": {
+    "general": "Umumiy baho",
+    "open": "Baholash"
+  },
+  "arena": {
+    "created": "Munozara yaratildi"
+  },
+  "settings": {
+    "saved": "Markaz ma’lumotlari saqlandi"
+  },
+  "profile": {
+    "thisDevice": "Bu qurilma ID"
+  },
+  "devices": {
+    "pendingTitle": "Kirish so‘rovlari",
+    "pendingHint": "Yangi qurilmalardan kirish uchun ruxsat so‘rovlari. Faqat o‘zingiz tanigan qurilmani tasdiqlang.",
+    "noPending": "Kutilayotgan so‘rovlar yo‘q",
+    "approve": "Tasdiqlash",
+    "reject": "Rad etish",
+    "approved": "Qurilma tasdiqlandi",
+    "rejected": "So‘rov rad etildi",
+    "trustedTitle": "Ishonchli qurilmalar",
+    "trustedHint": "Hisobingizga kira oladigan qurilmalar. Notanish qurilmani darhol o‘chiring.",
+    "none": "Qurilmalar yo‘q",
+    "unknown": "Noma’lum qurilma",
+    "current": "Shu qurilma",
+    "untrusted": "Tasdiqlanmagan",
+    "lastSeen": "Oxirgi kirish",
+    "revoke": "O‘chirish",
+    "revoked": "Qurilma o‘chirildi",
+    "revokeTitle": "Qurilmani o‘chirasizmi?",
+    "revokeText": "“{{name}}” endi hisobingizga kira olmaydi. Qayta kirish uchun yana tasdiqlash kerak bo‘ladi."
   }
 }

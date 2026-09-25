@@ -22,7 +22,9 @@
     "none": "None",
     "optional": "optional",
     "viewAll": "View all",
-    "details": "Details"
+    "details": "Details",
+    "loading": "Loading…",
+    "urlOnlyHint": "File upload isn’t available yet — paste a link instead."
   },
   "nav": {
     "aria": "Main navigation",
@@ -75,11 +77,12 @@
       "text": "A sign-in request from a new device was sent for {{phone}}. For security it must be approved from a device you already trust.",
       "step1": "Open the Acadium app on your phone",
       "step2": "Find the new request under “Devices”: {{device}}",
-      "step3": "Tap “Approve” — the panel opens automatically",
-      "auto": "Waiting for approval, checking every 5 seconds…",
-      "retry": "Check again",
+      "step3": "Tap “Approve”, then press “I approved — sign in” here",
+      "retry": "I approved — sign in",
       "back": "Use another number",
-      "requestId": "Request ID"
+      "requestId": "Request ID",
+      "hint": "Each attempt creates a new request, so approve on your phone first, then press the button.",
+      "still": "Not approved yet. Approve the latest request on your phone and try again."
     },
     "mobileOnly": {
       "title": "Please use the mobile app",
@@ -121,7 +124,15 @@
     "next": "Next"
   },
   "weekdays": {
-    "short": { "1": "Mo", "2": "Tu", "3": "We", "4": "Th", "5": "Fr", "6": "Sa", "7": "Su" },
+    "short": {
+      "1": "Mo",
+      "2": "Tu",
+      "3": "We",
+      "4": "Th",
+      "5": "Fr",
+      "6": "Sa",
+      "7": "Su"
+    },
     "long": {
       "1": "Monday",
       "2": "Tuesday",
@@ -136,9 +147,174 @@
     "today": "Today’s attendance",
     "present": "Present",
     "late": "Late",
-    "absent": "Absent"
+    "absent": "Absent",
+    "status": {
+      "PRESENT": "Present",
+      "LATE": "Late",
+      "ABSENT": "Absent",
+      "UNKNOWN": "Unknown"
+    }
   },
   "payments": {
     "soon": "Payments and debt tracking are in development."
+  },
+  "fields": {
+    "name": "Full name",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "phone": "Phone",
+    "group": "Group",
+    "groupName": "Group name",
+    "status": "Status",
+    "createdAt": "Added on",
+    "description": "Description",
+    "specialization": "Specialization",
+    "avatarUrl": "Photo URL",
+    "onlineUrl": "Online lesson link",
+    "teacher": "Teacher"
+  },
+  "status": {
+    "ACTIVE": "Active",
+    "BLOCKED": "Blocked",
+    "INACTIVE": "Inactive"
+  },
+  "students": {
+    "subtitle_one": "{{count}} student in total",
+    "subtitle_other": "{{count}} students in total",
+    "search": "Search by name, phone or group…",
+    "add": "Add student",
+    "addHint": "The student signs in to the Acadium mobile app with this number.",
+    "added": "Student added",
+    "groupHint": "You can assign a group later.",
+    "empty": "No students yet",
+    "emptyHint": "Add your first student — they can sign in to the app right away.",
+    "detail": "Student details",
+    "editProfile": "Personal details",
+    "phoneLocked": "The phone can’t be changed — it’s used to sign in.",
+    "changeGroup": "Change group",
+    "move": "Move",
+    "moved": "Student moved to the group",
+    "tabs": {
+      "profile": "Profile",
+      "grades": "Grades",
+      "attendance": "Attendance",
+      "parents": "Parents"
+    },
+    "noGrades": "No grades yet",
+    "noGradesHint": "Grades appear here once a teacher adds them.",
+    "noAttendance": "No attendance records",
+    "noAttendanceHint": "Records appear when the student checks in at the center via the app.",
+    "noParents": "No parents linked",
+    "noParentsHint": "Add a parent under “Parents” and pick this child."
+  },
+  "teachers": {
+    "subtitle_one": "{{count}} teacher in total",
+    "subtitle_other": "{{count}} teachers in total",
+    "add": "Add teacher",
+    "addHint": "The teacher signs in to the web panel with this number to manage homework and grades.",
+    "added": "Teacher added",
+    "edit": "Edit teacher",
+    "editHint": "Update name, specialization and photo.",
+    "specPlaceholder": "e.g. IELTS, Math",
+    "empty": "No teachers yet",
+    "emptyHint": "Add a teacher to run groups, homework and grades.",
+    "detail": "Teacher details",
+    "groups": "Groups",
+    "noGroups": "No groups assigned",
+    "noGroupsHint": "Assigning teachers to groups is coming soon."
+  },
+  "parents": {
+    "subtitle_one": "{{count}} parent in total",
+    "subtitle_other": "{{count}} parents in total",
+    "add": "Add parent",
+    "addHint": "Parents follow their child’s attendance, homework and grades in the app.",
+    "added": "Parent added",
+    "children": "Children",
+    "childrenHint": "You can pick several children.",
+    "pickChildren": "Pick children",
+    "childrenSelected_one": "{{count}} child selected",
+    "childrenSelected_other": "{{count}} children selected",
+    "empty": "No parents yet",
+    "emptyHint": "Add a parent and link their children."
+  },
+  "groups": {
+    "subtitle_one": "{{count}} group in total",
+    "subtitle_other": "{{count}} groups in total",
+    "create": "Create group",
+    "created": "Group created",
+    "edit": "Edit group",
+    "updated": "Group updated",
+    "deleted": "Group deleted",
+    "detail": "Group",
+    "formHint": "Lesson days and time appear in the schedule.",
+    "namePlaceholder": "e.g. English, B1",
+    "days": "Lesson days",
+    "start": "Starts",
+    "end": "Ends",
+    "onlineHint": "Zoom, Google Meet or Jitsi link — students join from the app.",
+    "teacherPick": "Pick a teacher",
+    "teacherSoon": "The API for assigning a teacher to a group isn’t ready yet.",
+    "pick": "Pick a group",
+    "noGroup": "No group",
+    "allGroups": "All groups",
+    "empty": "No groups yet",
+    "emptyHint": "Create your first group: name, lesson days and time.",
+    "emptyTeacher": "You don’t have any groups yet.",
+    "today": "Today",
+    "online": "Online lesson",
+    "joinOnline": "Join online lesson",
+    "studentsCount_one": "{{count}} student",
+    "studentsCount_other": "{{count}} students",
+    "weekly": "Weekly schedule",
+    "addExisting": "Add existing student",
+    "addExistingHint": "The selected student will be moved to “{{name}}”.",
+    "pickStudent": "Pick a student",
+    "noStudents": "No students in this group",
+    "noStudentsHint": "Add a new student or move an existing one here.",
+    "deleteTitle": "Delete group “{{name}}”?",
+    "deleteText": "The group and its schedule will be deleted; students stay without a group. This can’t be undone."
+  },
+  "homework": {
+    "create": "Assign homework",
+    "created": "Homework created. Students and parents were notified.",
+    "updated": "Homework updated",
+    "deleted": "Homework deleted",
+    "deadline": "Deadline",
+    "empty": "No homework yet",
+    "active": "Active",
+    "closed": "Past due"
+  },
+  "grades": {
+    "general": "General grade",
+    "open": "Grading"
+  },
+  "arena": {
+    "created": "Debate created"
+  },
+  "settings": {
+    "saved": "Center details saved"
+  },
+  "profile": {
+    "thisDevice": "This device ID"
+  },
+  "devices": {
+    "pendingTitle": "Sign-in requests",
+    "pendingHint": "Requests to sign in from new devices. Approve only devices you recognise.",
+    "noPending": "No pending requests",
+    "approve": "Approve",
+    "reject": "Reject",
+    "approved": "Device approved",
+    "rejected": "Request rejected",
+    "trustedTitle": "Trusted devices",
+    "trustedHint": "Devices that can access your account. Remove any you don’t recognise.",
+    "none": "No devices",
+    "unknown": "Unknown device",
+    "current": "This device",
+    "untrusted": "Not approved",
+    "lastSeen": "Last sign-in",
+    "revoke": "Remove",
+    "revoked": "Device removed",
+    "revokeTitle": "Remove this device?",
+    "revokeText": "“{{name}}” will no longer be able to sign in and will need approval again."
   }
 }
