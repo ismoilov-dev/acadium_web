@@ -153,7 +153,16 @@
       "LATE": "Late",
       "ABSENT": "Absent",
       "UNKNOWN": "Unknown"
-    }
+    },
+    "subtitle": "Students are checked in automatically by the app when they arrive.",
+    "byGroup": "By group",
+    "noLessons": "No lessons on this day",
+    "student": "Student",
+    "checkIn": "Check-in time",
+    "derivedHint": "“Absent” is derived from the schedule: students not checked in out of {{expected}} expected.",
+    "empty": "No check-ins",
+    "emptyHint": "No attendance records for the selected day.",
+    "readOnly": "Manual marking isn’t available yet — students check in via geolocation. It will appear here once the API supports it."
   },
   "payments": {
     "soon": "Payments and debt tracking are in development."
@@ -282,17 +291,101 @@
     "deadline": "Deadline",
     "empty": "No homework yet",
     "active": "Active",
-    "closed": "Past due"
+    "closed": "Past due",
+    "subtitle": "Assign homework to groups and keep an eye on deadlines.",
+    "edit": "Edit homework",
+    "title": "Title",
+    "titlePlaceholder": "e.g. IELTS Writing Task 2",
+    "descPlaceholder": "Describe what students need to do…",
+    "fileUrl": "File link",
+    "formHint": "Every student in the selected group receives the homework.",
+    "tzHint": "Tashkent time",
+    "notifyNote": "Students and parents will be notified.",
+    "emptyHint": "Assign the first homework — students see it in the app instantly.",
+    "soon": "Due soon",
+    "noDeadline": "No deadline",
+    "openFile": "Open file",
+    "gradeStudents_one": "Grading — {{count}} student",
+    "gradeStudents_other": "Grading — {{count}} students",
+    "deleteTitle": "Delete homework?",
+    "deleteText": "“{{title}}” will be deleted. This can’t be undone."
   },
   "grades": {
     "general": "General grade",
-    "open": "Grading"
+    "open": "Grading",
+    "subtitle": "Pick a group and homework, then enter scores quickly.",
+    "step1": "1. Group",
+    "step2": "2. Homework (optional)",
+    "pickGroup": "Pick a group",
+    "pickGroupHint": "The gradebook opens with that group’s students.",
+    "notifyNote": "Each grade is sent to the student and their parents as a notification.",
+    "keyboardHint": "Next student:",
+    "saveAll": "Save all",
+    "savedAll_one": "{{count}} grade saved",
+    "savedAll_other": "{{count}} grades saved",
+    "savedPartial": "{{ok}} saved, {{failed}} failed",
+    "score": "Score",
+    "comment": "Comment",
+    "commentPlaceholder": "Comment (optional)",
+    "current": "Current",
+    "last": "Last",
+    "error": "Error",
+    "noStudents": "No students in this group",
+    "noStudentsHint": "Add students to the group first."
   },
   "arena": {
-    "created": "Debate created"
+    "created": "Debate created",
+    "subtitle": "Live debates for groups — teachers watch and moderate.",
+    "create": "Create debate",
+    "createHint": "Students of the group see the topic and join from the app.",
+    "titleField": "Title",
+    "titlePlaceholder": "e.g. AI in education",
+    "topic": "Debate topic",
+    "topicPlaceholder": "e.g. Will AI replace teachers within 10 years?",
+    "startsAt": "Starts",
+    "endsAt": "Ends",
+    "empty": "No debates yet",
+    "emptyHint": "Start the first debate for your group.",
+    "live": "Live",
+    "upcoming": "Scheduled",
+    "ended": "Ended",
+    "watch": "Watch",
+    "chat": "Live chat",
+    "noMessages": "No messages yet",
+    "noMessagesHint": "Messages appear here as students start writing.",
+    "messagePlaceholder": "Write as moderator…",
+    "send": "Send",
+    "participant": "Participant",
+    "moderator": "Moderator panel",
+    "moderatorHint": "Steer the discussion, ask questions and remind everyone of the rules.",
+    "activeInChat": "Active in chat",
+    "ws": {
+      "connecting": "Connecting…",
+      "open": "Connected",
+      "closed": "Disconnected — reconnecting"
+    }
   },
   "settings": {
-    "saved": "Center details saved"
+    "saved": "Center details saved",
+    "subtitle": "Center details and the geofence for automatic attendance.",
+    "profile": "Center profile",
+    "profileHint": "Students and parents see these details in the app.",
+    "name": "Center name",
+    "address": "Address",
+    "addressPlaceholder": "e.g. 15 Amir Temur St, Tashkent",
+    "logoUrl": "Logo URL",
+    "geofence": "Location & geofence",
+    "geofenceHint": "Click the map to set the center. Students inside the circle are checked in automatically.",
+    "myLocation": "My location",
+    "geoUnsupported": "This browser doesn’t support geolocation",
+    "geoDenied": "Location permission denied",
+    "lat": "Latitude",
+    "lng": "Longitude",
+    "radius": "Radius (m)",
+    "radiusRange": "Between 10 and 5000 meters",
+    "radiusHint": "A student within {{radius}} m of the center is marked “Present”.",
+    "unsaved": "You have unsaved changes",
+    "upToDate": "All changes saved"
   },
   "profile": {
     "thisDevice": "This device ID"
@@ -316,5 +409,52 @@
     "revoked": "Device removed",
     "revokeTitle": "Remove this device?",
     "revokeText": "“{{name}}” will no longer be able to sign in and will need approval again."
+  },
+  "topbar": {
+    "center": "Learning center",
+    "teacherPanel": "Teacher panel"
+  },
+  "dashboard": {
+    "morning": "Good morning",
+    "afternoon": "Good afternoon",
+    "evening": "Good evening",
+    "hello": "Hi, {{name}}!",
+    "subtitle": "Here’s your center today.",
+    "centerLine": "{{name}} — today at a glance",
+    "teacherSubtitle_one": "You have {{count}} lesson today.",
+    "teacherSubtitle_other": "You have {{count}} lessons today.",
+    "recentHomework": "Recent homework",
+    "recentGrades": "Recent grades",
+    "noGrades": "No grades yet",
+    "noGradesHint": "They’ll appear here once teachers start grading.",
+    "noChartData": "No data for the last 7 days",
+    "lessonsToday": "Lessons today",
+    "activeHomework": "Active homework",
+    "todayLessons": "Today’s lessons",
+    "noLessons": "No lessons today",
+    "liveNow": "In progress",
+    "finished": "Finished",
+    "upcoming": "Upcoming",
+    "join": "Join",
+    "deadlines": "Upcoming deadlines",
+    "noDeadlines": "No upcoming deadlines",
+    "tip": "Tip",
+    "tipText": "The Acadium app checks students in automatically when they arrive — fine-tune the geofence in “Center settings”."
+  },
+  "schedule": {
+    "subtitle": "Weekly schedule for every group.",
+    "empty": "The schedule is empty",
+    "emptyHint": "Create a group and set its lesson days and time.",
+    "free": "No lessons"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "readAll": "Mark all read",
+    "empty": "No notifications",
+    "ws": {
+      "connecting": "Connecting",
+      "open": "Live",
+      "closed": "Offline"
+    }
   }
 }

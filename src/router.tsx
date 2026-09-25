@@ -3,17 +3,28 @@ import { lazy, Suspense, type ReactNode } from 'react'
 import { createBrowserRouter, Navigate } from 'react-router-dom'
 
 import { AppLayout } from '@/components/layout/AppLayout'
+import { TopbarContext } from '@/components/layout/TopbarContext'
 import { ListSkeleton } from '@/components/shared/States'
 import { FullScreenLoader, RequireAuth, RequireRole } from '@/features/auth/guards'
+import { NotificationBell } from '@/features/notifications/NotificationBell'
 import type { Role } from '@/types'
 
 const LoginPage = lazy(() => import('@/features/auth/LoginPage'))
-const PaymentsPage = lazy(() => import('@/features/payments/PaymentsPage'))
+const DashboardPage = lazy(() => import('@/features/dashboard/DashboardPage'))
 const StudentsPage = lazy(() => import('@/features/students/StudentsPage'))
 const TeachersPage = lazy(() => import('@/features/teachers/TeachersPage'))
 const ParentsPage = lazy(() => import('@/features/parents/ParentsPage'))
 const GroupsPage = lazy(() => import('@/features/groups/GroupsPage'))
 const GroupDetailPage = lazy(() => import('@/features/groups/GroupDetailPage'))
+const SchedulePage = lazy(() => import('@/features/schedule/SchedulePage'))
+const AttendancePage = lazy(() => import('@/features/attendance/AttendancePage'))
+const HomeworkPage = lazy(() => import('@/features/homework/HomeworkPage'))
+const HomeworkDetailPage = lazy(() => import('@/features/homework/HomeworkDetailPage'))
+const GradesPage = lazy(() => import('@/features/grades/GradesPage'))
+const ArenaPage = lazy(() => import('@/features/arena/ArenaPage'))
+const DebatePage = lazy(() => import('@/features/arena/DebatePage'))
+const SettingsPage = lazy(() => import('@/features/settings/SettingsPage'))
+const PaymentsPage = lazy(() => import('@/features/payments/PaymentsPage'))
 const ProfilePage = lazy(() => import('@/features/profile/ProfilePage'))
 
 const A: Role[] = ['CENTER_ADMIN']
@@ -47,19 +58,27 @@ export const router = createBrowserRouter([
     path: '/',
     element: (
       <RequireAuth>
-        <AppLayout />
+        <AppLayout topbarStart={<TopbarContext />} topbarEnd={<NotificationBell />} />
       </RequireAuth>
     ),
     children: [
       { index: true, element: <Navigate to="/dashboard" replace /> },
-      { path: 'dashboard', element: page(<PaymentsPage />) },
+      { path: 'dashboard', element: page(<DashboardPage />) },
       { path: 'students', element: adminOnly(<StudentsPage />) },
       { path: 'teachers', element: adminOnly(<TeachersPage />) },
       { path: 'parents', element: adminOnly(<ParentsPage />) },
       { path: 'groups', element: page(<GroupsPage />) },
       { path: 'groups/:id', element: page(<GroupDetailPage />) },
-      { path: 'profile', element: page(<ProfilePage />) },
+      { path: 'schedule', element: page(<SchedulePage />) },
+      { path: 'attendance', element: page(<AttendancePage />) },
+      { path: 'homework', element: page(<HomeworkPage />) },
+      { path: 'homework/:id', element: page(<HomeworkDetailPage />) },
+      { path: 'grades', element: page(<GradesPage />) },
+      { path: 'arena', element: page(<ArenaPage />) },
+      { path: 'arena/:id', element: page(<DebatePage />) },
+      { path: 'settings', element: adminOnly(<SettingsPage />) },
       { path: 'payments', element: adminOnly(<PaymentsPage />) },
+      { path: 'profile', element: page(<ProfilePage />) },
       { path: '*', element: <Navigate to="/dashboard" replace /> },
     ],
   },

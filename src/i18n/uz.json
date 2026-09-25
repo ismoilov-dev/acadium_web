@@ -153,7 +153,16 @@
       "LATE": "Kechikkan",
       "ABSENT": "Kelmagan",
       "UNKNOWN": "Noma’lum"
-    }
+    },
+    "subtitle": "O‘quvchilar markazga kelganda ilova orqali avtomatik belgilanadi.",
+    "byGroup": "Guruhlar bo‘yicha",
+    "noLessons": "Bu kunda darslar yo‘q",
+    "student": "O‘quvchi",
+    "checkIn": "Kelgan vaqti",
+    "derivedHint": "“Kelmagan” soni jadval asosida hisoblandi: {{expected}} ta kutilgan o‘quvchidan belgilanmaganlar.",
+    "empty": "Belgilanishlar yo‘q",
+    "emptyHint": "Tanlangan kun uchun davomat yozuvlari topilmadi.",
+    "readOnly": "Davomatni qo‘lda belgilash hozircha mavjud emas — o‘quvchilar geolokatsiya orqali belgilanadi. Qo‘lda belgilash API’si qo‘shilgach, shu yerda paydo bo‘ladi."
   },
   "payments": {
     "soon": "To‘lovlar va qarzdorlikni kuzatish moduli ishlab chiqilmoqda."
@@ -276,17 +285,99 @@
     "deadline": "Muddat",
     "empty": "Hali vazifalar yo‘q",
     "active": "Faol",
-    "closed": "Muddati o‘tgan"
+    "closed": "Muddati o‘tgan",
+    "subtitle": "Guruhlarga vazifa bering va muddatlarni kuzating.",
+    "edit": "Vazifani tahrirlash",
+    "title": "Vazifa nomi",
+    "titlePlaceholder": "Masalan: IELTS Writing Task 2",
+    "descPlaceholder": "Nima qilish kerakligini yozing…",
+    "fileUrl": "Fayl havolasi",
+    "formHint": "Vazifa tanlangan guruhdagi barcha o‘quvchilarga beriladi.",
+    "tzHint": "Toshkent vaqti bo‘yicha",
+    "notifyNote": "O‘quvchilar va ota-onalarga bildirishnoma yuboriladi.",
+    "emptyHint": "Birinchi vazifani bering — o‘quvchilar ilovada darhol ko‘rishadi.",
+    "soon": "Muddat yaqin",
+    "noDeadline": "Muddatsiz",
+    "openFile": "Faylni ochish",
+    "gradeStudents": "Baholash — {{count}} o‘quvchi",
+    "deleteTitle": "Vazifani o‘chirasizmi?",
+    "deleteText": "“{{title}}” vazifasi o‘chiriladi. Bu amalni qaytarib bo‘lmaydi."
   },
   "grades": {
     "general": "Umumiy baho",
-    "open": "Baholash"
+    "open": "Baholash",
+    "subtitle": "Guruh va vazifani tanlang, so‘ng ballarni tez kiriting.",
+    "step1": "1. Guruh",
+    "step2": "2. Vazifa (ixtiyoriy)",
+    "pickGroup": "Guruhni tanlang",
+    "pickGroupHint": "Baholash jadvali tanlangan guruhdagi o‘quvchilar bilan ochiladi.",
+    "notifyNote": "Har bir baho o‘quvchi va ota-onasiga bildirishnoma sifatida yuboriladi.",
+    "keyboardHint": "Keyingi o‘quvchiga o‘tish:",
+    "saveAll": "Hammasini saqlash",
+    "savedAll": "{{count}} ta baho saqlandi",
+    "savedPartial": "{{ok}} ta saqlandi, {{failed}} tasida xatolik",
+    "score": "Ball",
+    "comment": "Izoh",
+    "commentPlaceholder": "Izoh (ixtiyoriy)",
+    "current": "Joriy baho",
+    "last": "Oxirgi",
+    "error": "Xatolik",
+    "noStudents": "Guruhda o‘quvchilar yo‘q",
+    "noStudentsHint": "Avval guruhga o‘quvchi qo‘shing."
   },
   "arena": {
-    "created": "Munozara yaratildi"
+    "created": "Munozara yaratildi",
+    "subtitle": "Guruhlar uchun jonli munozaralar — o‘qituvchi moderator sifatida kuzatadi.",
+    "create": "Munozara yaratish",
+    "createHint": "Mavzu guruh o‘quvchilariga ko‘rinadi, ular ilovadan qo‘shilishadi.",
+    "titleField": "Sarlavha",
+    "titlePlaceholder": "Masalan: Sun’iy intellekt va ta’lim",
+    "topic": "Munozara mavzusi",
+    "topicPlaceholder": "Masalan: 10 yilda AI o‘qituvchilarni almashtiradimi?",
+    "startsAt": "Boshlanishi",
+    "endsAt": "Tugashi",
+    "empty": "Hali munozaralar yo‘q",
+    "emptyHint": "Guruhingiz uchun birinchi munozarani boshlang.",
+    "live": "Jonli",
+    "upcoming": "Rejalashtirilgan",
+    "ended": "Tugagan",
+    "watch": "Kuzatish",
+    "chat": "Jonli chat",
+    "noMessages": "Hali xabarlar yo‘q",
+    "noMessagesHint": "O‘quvchilar yozishni boshlaganda xabarlar shu yerda paydo bo‘ladi.",
+    "messagePlaceholder": "Moderator sifatida yozing…",
+    "send": "Yuborish",
+    "participant": "Ishtirokchi",
+    "moderator": "Moderator paneli",
+    "moderatorHint": "Munozarani yo‘naltiring, savollar bering va qoidalarni eslating.",
+    "activeInChat": "Chatdagi faol ishtirokchilar",
+    "ws": {
+      "connecting": "Ulanmoqda…",
+      "open": "Ulangan",
+      "closed": "Uzildi — qayta ulanmoqda"
+    }
   },
   "settings": {
-    "saved": "Markaz ma’lumotlari saqlandi"
+    "saved": "Markaz ma’lumotlari saqlandi",
+    "subtitle": "Markaz ma’lumotlari va avtomatik davomat uchun geozona.",
+    "profile": "Markaz profili",
+    "profileHint": "O‘quvchi va ota-onalar ilovada shu ma’lumotlarni ko‘rishadi.",
+    "name": "Markaz nomi",
+    "address": "Manzil",
+    "addressPlaceholder": "Masalan: Toshkent, Amir Temur ko‘chasi 15",
+    "logoUrl": "Logotip havolasi",
+    "geofence": "Joylashuv va geozona",
+    "geofenceHint": "Xaritani bosib markaz joyini belgilang. O‘quvchi aylana ichida bo‘lsa, davomat avtomatik qayd etiladi.",
+    "myLocation": "Mening joylashuvim",
+    "geoUnsupported": "Brauzer geolokatsiyani qo‘llab-quvvatlamaydi",
+    "geoDenied": "Joylashuvga ruxsat berilmadi",
+    "lat": "Kenglik",
+    "lng": "Uzunlik",
+    "radius": "Radius (metr)",
+    "radiusRange": "10 dan 5000 metrgacha",
+    "radiusHint": "O‘quvchi markazdan {{radius}} m ichida bo‘lsa, “Kelgan” deb belgilanadi.",
+    "unsaved": "Saqlanmagan o‘zgarishlar bor",
+    "upToDate": "Barcha o‘zgarishlar saqlangan"
   },
   "profile": {
     "thisDevice": "Bu qurilma ID"
@@ -310,5 +401,51 @@
     "revoked": "Qurilma o‘chirildi",
     "revokeTitle": "Qurilmani o‘chirasizmi?",
     "revokeText": "“{{name}}” endi hisobingizga kira olmaydi. Qayta kirish uchun yana tasdiqlash kerak bo‘ladi."
+  },
+  "topbar": {
+    "center": "O‘quv markazi",
+    "teacherPanel": "O‘qituvchi paneli"
+  },
+  "dashboard": {
+    "morning": "Xayrli tong",
+    "afternoon": "Xayrli kun",
+    "evening": "Xayrli kech",
+    "hello": "Salom, {{name}}!",
+    "subtitle": "Markazingizdagi bugungi holat.",
+    "centerLine": "{{name}} — bugungi holat",
+    "teacherSubtitle": "Bugun {{count}} ta darsingiz bor.",
+    "recentHomework": "So‘nggi vazifalar",
+    "recentGrades": "So‘nggi baholar",
+    "noGrades": "Hali baholar yo‘q",
+    "noGradesHint": "O‘qituvchilar baholay boshlaganda shu yerda ko‘rinadi.",
+    "noChartData": "Oxirgi 7 kun uchun ma’lumot yo‘q",
+    "lessonsToday": "Bugungi darslar",
+    "activeHomework": "Faol vazifalar",
+    "todayLessons": "Bugungi darslar",
+    "noLessons": "Bugun dars yo‘q",
+    "liveNow": "Hozir davom etmoqda",
+    "finished": "Tugagan",
+    "upcoming": "Kutilmoqda",
+    "join": "Kirish",
+    "deadlines": "Muddati yaqin vazifalar",
+    "noDeadlines": "Yaqin muddatli vazifalar yo‘q",
+    "tip": "Maslahat",
+    "tipText": "O‘quvchilar markazga kelganda Acadium ilovasi ularni avtomatik belgilaydi — geozonani “Markaz sozlamalari”da to‘g‘rilang."
+  },
+  "schedule": {
+    "subtitle": "Barcha guruhlarning haftalik dars jadvali.",
+    "empty": "Jadval bo‘sh",
+    "emptyHint": "Guruh yaratib, dars kunlari va vaqtini belgilang.",
+    "free": "Dars yo‘q"
+  },
+  "notifications": {
+    "title": "Bildirishnomalar",
+    "readAll": "Barchasini o‘qildi deb belgilash",
+    "empty": "Bildirishnomalar yo‘q",
+    "ws": {
+      "connecting": "Ulanmoqda",
+      "open": "Jonli",
+      "closed": "Oflayn"
+    }
   }
 }
