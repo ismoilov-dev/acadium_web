@@ -18,10 +18,9 @@ Retrying login (or polling) floods the trusted device with duplicate requests.
 
 ## 2. Assign a teacher to a group
 
-`CreateGroupRequest` has no teacher field; the form shows a disabled "O‘qituvchi — Tez orada" select.
+✅ `teacher_id` is now accepted on create/update and the group form sends it. Still needed:
 
 ```
-POST/PATCH /api/v1/groups[/{id}]   + "teacher_id": "uuid"
 GET  /api/v1/groups[/{id}]         → include "teacher_id", "teacher": { "id", "first_name", "last_name" }, "student_count"
 ```
 

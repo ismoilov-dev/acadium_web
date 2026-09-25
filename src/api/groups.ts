@@ -8,6 +8,7 @@ export interface GroupInput {
   start_time: string
   end_time: string
   online_url?: string
+  teacher_id?: string
 }
 
 export const groupsApi = {

@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next'
 import { z } from 'zod'
 
 import { Field } from '@/components/shared/Field'
-import { SoonBadge } from '@/components/shared/States'
 import { WeekdayPicker } from '@/components/shared/WeekdayPicker'
 import { Button } from '@/components/ui/button'
 import {
@@ -16,9 +15,11 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 import { Input, Textarea } from '@/components/ui/input'
-import { Select, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { useCreateGroup, useUpdateGroup } from '@/hooks/useGroups'
+import { useTeachers } from '@/hooks/useTeachers'
 import { fmtTime } from '@/lib/date'
+import { fullName } from '@/lib/roles'
 import { optionalUrl, requiredText } from '@/lib/schemas'
 import type { Group } from '@/types'
 
@@ -42,6 +43,7 @@ export function GroupFormDialog({
       start_time: z.string().regex(/^\d{2}:\d{2}$/, t('validation.required')),
       end_time: z.string().regex(/^\d{2}:\d{2}$/, t('validation.required')),
       online_url: optionalUrl(t),
+      teacher_id: z.string(),
     })
     .refine((v) => v.end_time > v.start_time, {
       path: ['end_time'],
@@ -58,8 +60,10 @@ export function GroupFormDialog({
       start_time: group ? fmtTime(group.start_time) : '14:00',
       end_time: group ? fmtTime(group.end_time) : '15:30',
       online_url: group?.online_url ?? '',
+      teacher_id: group?.teacher_id ?? '',
     },
   })
+  const teachers = useTeachers()
   const create = useCreateGroup()
   const update = useUpdateGroup()
   const { errors } = form.formState
@@ -72,6 +76,7 @@ export function GroupFormDialog({
       start_time: v.start_time,
       end_time: v.end_time,
       online_url: v.online_url.trim(),
+      ...(v.teacher_id ? { teacher_id: v.teacher_id } : {}),
     }
     const done = (g: Group) => {
       onOpenChange(false)
@@ -163,19 +168,28 @@ export function GroupFormDialog({
               aria-invalid={!!errors.online_url}
             />
           </Field>
-          <Field
-            label={
-              <span className="inline-flex items-center gap-2">
-                {t('fields.teacher')} <SoonBadge />
-              </span>
-            }
-            hint={t('groups.teacherSoon')}
-          >
-            <Select disabled>
-              <SelectTrigger>
-                <SelectValue placeholder={group?.teacher_name ?? t('groups.teacherPick')} />
-              </SelectTrigger>
-            </Select>
+          <Field label={t('fields.teacher')}>
+            <Controller
+              control={form.control}
+              name="teacher_id"
+              render={({ field }) => (
+                <Select value={field.value} onValueChange={field.onChange}>
+                  <SelectTrigger>
+                    <SelectValue placeholder={group?.teacher_name ?? t('groups.teacherPick')} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {(teachers.data ?? []).map((tc) => (
+                      <SelectItem key={tc.id} value={tc.id}>
+                        {fullName(tc)}
+                      </SelectItem>
+                    ))}
+                    {teachers.data?.length === 0 && (
+                      <div className="px-2.5 py-2 text-sm text-ink-mute">{t('states.empty')}</div>
+                    )}
+                  </SelectContent>
+                </Select>
+              )}
+            />
           </Field>
           <DialogFooter>
             <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>
