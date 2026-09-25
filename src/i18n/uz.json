@@ -1,0 +1,144 @@
+{
+  "common": {
+    "language": "Til",
+    "retry": "Qayta urinish",
+    "cancel": "Bekor qilish",
+    "delete": "O‘chirish",
+    "save": "Saqlash",
+    "saved": "Saqlandi",
+    "edit": "Tahrirlash",
+    "create": "Yaratish",
+    "add": "Qo‘shish",
+    "close": "Yopish",
+    "search": "Qidirish…",
+    "all": "Barchasi",
+    "soon": "Tez orada",
+    "soonTitle": "Bu bo‘lim tez orada ishga tushadi",
+    "soonText": "Backend tomonida kerakli API tayyor bo‘lgach, bu sahifa to‘liq ishlaydi.",
+    "darkMode": "Tungi rejim",
+    "lightMode": "Kunduzgi rejim",
+    "open": "Ochish",
+    "back": "Orqaga",
+    "none": "Yo‘q",
+    "optional": "ixtiyoriy",
+    "viewAll": "Barchasini ko‘rish",
+    "details": "Batafsil"
+  },
+  "nav": {
+    "aria": "Asosiy navigatsiya",
+    "menu": "Menyu",
+    "collapse": "Yig‘ish",
+    "expand": "Yoyish",
+    "dashboard": "Bosh sahifa",
+    "students": "O‘quvchilar",
+    "teachers": "O‘qituvchilar",
+    "parents": "Ota-onalar",
+    "groups": "Guruhlar",
+    "myGroups": "Mening guruhlarim",
+    "schedule": "Dars jadvali",
+    "attendance": "Davomat",
+    "homework": "Uyga vazifalar",
+    "grades": "Baholash",
+    "arena": "Arena",
+    "payments": "To‘lovlar",
+    "settings": "Markaz sozlamalari",
+    "profile": "Profil",
+    "devices": "Qurilmalar",
+    "sections": {
+      "people": "Odamlar",
+      "study": "O‘quv jarayoni",
+      "center": "Markaz"
+    }
+  },
+  "roles": {
+    "SUPER_ADMIN": "Super admin",
+    "CENTER_ADMIN": "Markaz rahbari",
+    "TEACHER": "O‘qituvchi",
+    "STUDENT": "O‘quvchi",
+    "PARENT": "Ota-ona"
+  },
+  "auth": {
+    "tag": "Markaz va o‘qituvchilar uchun panel",
+    "title": "Xush kelibsiz!",
+    "subtitle": "Telefon raqamingizni kiriting. Parol kerak emas — kirish qurilmangiz orqali tasdiqlanadi.",
+    "phone": "Telefon raqam",
+    "submit": "Kirish",
+    "logout": "Chiqish",
+    "deviceNote": "Bu brauzer “{{device}}” nomi bilan qurilmalaringiz ro‘yxatiga qo‘shiladi.",
+    "errors": {
+      "notFound": "Bu raqam bilan foydalanuvchi topilmadi. Raqamni tekshiring yoki markaz rahbariga murojaat qiling.",
+      "blocked": "Hisobingiz bloklangan. Batafsil ma’lumot uchun Acadium qo‘llab-quvvatlash xizmatiga murojaat qiling.",
+      "rejected": "Kirish so‘rovi rad etildi."
+    },
+    "pending": {
+      "title": "Kirishni tasdiqlang",
+      "text": "{{phone}} raqami uchun yangi qurilmadan kirish so‘rovi yuborildi. Xavfsizlik uchun uni allaqachon ishonchli bo‘lgan qurilmadan tasdiqlash kerak.",
+      "step1": "Telefoningizda Acadium ilovasini oching",
+      "step2": "“Qurilmalar” bo‘limida yangi so‘rovni toping: {{device}}",
+      "step3": "“Tasdiqlash” tugmasini bosing — panel avtomatik ochiladi",
+      "auto": "Tasdiqlanishini kutyapmiz, har 5 soniyada tekshiriladi…",
+      "retry": "Qayta tekshirish",
+      "back": "Boshqa raqam",
+      "requestId": "So‘rov ID"
+    },
+    "mobileOnly": {
+      "title": "Mobil ilovadan foydalaning",
+      "text": "Veb-panel markaz rahbarlari va o‘qituvchilar uchun. {{role}} sifatida Acadium mobil ilovasi orqali kiring — u yerda davomat, vazifalar va baholar mavjud."
+    },
+    "visual": {
+      "headline1": "Butun markaz —",
+      "headline2": "bitta panelda",
+      "row1": "Ingliz tili, B1",
+      "row2": "Matematika, 9-sinf",
+      "row3": "Python asoslari"
+    }
+  },
+  "states": {
+    "errorTitle": "Ma’lumotni yuklab bo‘lmadi",
+    "empty": "Hozircha hech narsa yo‘q",
+    "noResults": "Hech narsa topilmadi",
+    "noResultsHint": "Qidiruv so‘zini o‘zgartirib ko‘ring."
+  },
+  "errors": {
+    "network": "Serverga ulanib bo‘lmadi. Internetni tekshiring.",
+    "timeout": "Server javob bermadi. Birozdan so‘ng qayta urining.",
+    "forbidden": "Bu amal uchun ruxsatingiz yo‘q.",
+    "server": "Serverda xatolik yuz berdi.",
+    "unknown": "Noma’lum xatolik"
+  },
+  "validation": {
+    "required": "Majburiy maydon",
+    "phone": "Raqamni to‘liq kiriting: +998 XX XXX XX XX",
+    "url": "To‘g‘ri havola kiriting (https://…)",
+    "score": "Ball 0 dan 100 gacha bo‘lishi kerak",
+    "days": "Kamida bitta kunni tanlang",
+    "timeOrder": "Tugash vaqti boshlanishdan keyin bo‘lishi kerak",
+    "min": "Kamida {{count}} ta belgi"
+  },
+  "table": {
+    "range": "{{from}}–{{to}} / {{total}}",
+    "prev": "Oldingi",
+    "next": "Keyingi"
+  },
+  "weekdays": {
+    "short": { "1": "Du", "2": "Se", "3": "Ch", "4": "Pa", "5": "Ju", "6": "Sh", "7": "Ya" },
+    "long": {
+      "1": "Dushanba",
+      "2": "Seshanba",
+      "3": "Chorshanba",
+      "4": "Payshanba",
+      "5": "Juma",
+      "6": "Shanba",
+      "7": "Yakshanba"
+    }
+  },
+  "attendance": {
+    "today": "Bugungi davomat",
+    "present": "Kelgan",
+    "late": "Kechikkan",
+    "absent": "Kelmagan"
+  },
+  "payments": {
+    "soon": "To‘lovlar va qarzdorlikni kuzatish moduli ishlab chiqilmoqda."
+  }
+}

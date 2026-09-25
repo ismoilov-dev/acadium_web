@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Landing tokens (hex → HSL): primary #4a9eed, violet #8b5cf6, ink #0f172a,
+   ink-soft #475569, ink-mute #94a3b8, line #e5e8ef, bg-soft #f6f7fb, tint #eef3fe,
+   ok #16a34a (#e7f7ee), warn #d97706 (#fdf2e2). */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 210 82% 61%;
+    --primary-foreground: 0 0% 100%;
+    --violet: 258 90% 66%;
+    --secondary: 230 29% 97%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 230 29% 97%;
+    --muted-foreground: 215 19% 35%;
+    --accent: 221 87% 97%;
+    --accent-foreground: 228 69% 55%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 225 24% 92%;
+    --input: 225 24% 92%;
+    --ring: 258 90% 66%;
+    --soft: 230 29% 97%;
+    --tint: 221 87% 97%;
+    --tint-foreground: 228 69% 55%;
+    --ink-soft: 215 19% 35%;
+    --ink-mute: 215 20% 65%;
+    --ok: 142 76% 36%;
+    --ok-soft: 145 59% 94%;
+    --warn: 32 95% 44%;
+    --warn-soft: 36 86% 94%;
+    --bad: 0 72% 51%;
+    --bad-soft: 0 86% 96%;
+    color-scheme: light;
+  }
+
+  .dark {
+    --background: 224 36% 8%;
+    --foreground: 220 20% 94%;
+    --card: 223 32% 11%;
+    --card-foreground: 220 20% 94%;
+    --popover: 223 32% 11%;
+    --popover-foreground: 220 20% 94%;
+    --primary: 210 82% 63%;
+    --primary-foreground: 0 0% 100%;
+    --violet: 258 90% 70%;
+    --secondary: 223 28% 16%;
+    --secondary-foreground: 220 20% 94%;
+    --muted: 223 28% 16%;
+    --muted-foreground: 217 16% 68%;
+    --accent: 226 40% 20%;
+    --accent-foreground: 221 90% 78%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 223 24% 20%;
+    --input: 223 24% 22%;
+    --ring: 258 90% 70%;
+    --soft: 223 30% 13%;
+    --tint: 226 40% 18%;
+    --tint-foreground: 221 90% 78%;
+    --ink-soft: 217 16% 72%;
+    --ink-mute: 217 12% 55%;
+    --ok: 142 60% 50%;
+    --ok-soft: 145 40% 16%;
+    --warn: 36 90% 55%;
+    --warn-soft: 34 50% 16%;
+    --bad: 0 80% 64%;
+    --bad-soft: 0 45% 18%;
+    color-scheme: dark;
+  }
+
+  * {
+    @apply border-border;
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-soft font-sans text-foreground;
+    font-feature-settings: 'tnum' 0;
+  }
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.02em;
+  }
+  :focus-visible {
+    outline: 2px solid hsl(var(--violet));
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-brand bg-clip-text text-transparent;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.leaflet-container {
+  font-family: inherit;
+  z-index: 0;
+}

@@ -1,0 +1,144 @@
+{
+  "common": {
+    "language": "Language",
+    "retry": "Try again",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "save": "Save",
+    "saved": "Saved",
+    "edit": "Edit",
+    "create": "Create",
+    "add": "Add",
+    "close": "Close",
+    "search": "Search…",
+    "all": "All",
+    "soon": "Soon",
+    "soonTitle": "This section is coming soon",
+    "soonText": "The page will be fully functional once the backend API is ready.",
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode",
+    "open": "Open",
+    "back": "Back",
+    "none": "None",
+    "optional": "optional",
+    "viewAll": "View all",
+    "details": "Details"
+  },
+  "nav": {
+    "aria": "Main navigation",
+    "menu": "Menu",
+    "collapse": "Collapse",
+    "expand": "Expand",
+    "dashboard": "Dashboard",
+    "students": "Students",
+    "teachers": "Teachers",
+    "parents": "Parents",
+    "groups": "Groups",
+    "myGroups": "My groups",
+    "schedule": "Schedule",
+    "attendance": "Attendance",
+    "homework": "Homework",
+    "grades": "Grading",
+    "arena": "Arena",
+    "payments": "Payments",
+    "settings": "Center settings",
+    "profile": "Profile",
+    "devices": "Devices",
+    "sections": {
+      "people": "People",
+      "study": "Learning",
+      "center": "Center"
+    }
+  },
+  "roles": {
+    "SUPER_ADMIN": "Super admin",
+    "CENTER_ADMIN": "Center admin",
+    "TEACHER": "Teacher",
+    "STUDENT": "Student",
+    "PARENT": "Parent"
+  },
+  "auth": {
+    "tag": "Panel for centers and teachers",
+    "title": "Welcome back!",
+    "subtitle": "Enter your phone number. No password needed — sign-in is confirmed through your device.",
+    "phone": "Phone number",
+    "submit": "Sign in",
+    "logout": "Sign out",
+    "deviceNote": "This browser will be added to your devices as “{{device}}”.",
+    "errors": {
+      "notFound": "No user with this number. Check the number or contact your center admin.",
+      "blocked": "Your account is blocked. Please contact Acadium support.",
+      "rejected": "The sign-in request was rejected."
+    },
+    "pending": {
+      "title": "Approve this sign-in",
+      "text": "A sign-in request from a new device was sent for {{phone}}. For security it must be approved from a device you already trust.",
+      "step1": "Open the Acadium app on your phone",
+      "step2": "Find the new request under “Devices”: {{device}}",
+      "step3": "Tap “Approve” — the panel opens automatically",
+      "auto": "Waiting for approval, checking every 5 seconds…",
+      "retry": "Check again",
+      "back": "Use another number",
+      "requestId": "Request ID"
+    },
+    "mobileOnly": {
+      "title": "Please use the mobile app",
+      "text": "The web panel is for center admins and teachers. As a {{role}}, sign in with the Acadium mobile app — attendance, homework and grades are all there."
+    },
+    "visual": {
+      "headline1": "Your whole center —",
+      "headline2": "in one panel",
+      "row1": "English, B1",
+      "row2": "Math, grade 9",
+      "row3": "Python basics"
+    }
+  },
+  "states": {
+    "errorTitle": "Couldn’t load data",
+    "empty": "Nothing here yet",
+    "noResults": "Nothing found",
+    "noResultsHint": "Try a different search."
+  },
+  "errors": {
+    "network": "Can’t reach the server. Check your connection.",
+    "timeout": "The server didn’t respond. Try again shortly.",
+    "forbidden": "You don’t have permission for this action.",
+    "server": "Server error.",
+    "unknown": "Unknown error"
+  },
+  "validation": {
+    "required": "Required",
+    "phone": "Enter the full number: +998 XX XXX XX XX",
+    "url": "Enter a valid link (https://…)",
+    "score": "Score must be between 0 and 100",
+    "days": "Pick at least one day",
+    "timeOrder": "End time must be after start time",
+    "min": "At least {{count}} characters"
+  },
+  "table": {
+    "range": "{{from}}–{{to}} of {{total}}",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "weekdays": {
+    "short": { "1": "Mo", "2": "Tu", "3": "We", "4": "Th", "5": "Fr", "6": "Sa", "7": "Su" },
+    "long": {
+      "1": "Monday",
+      "2": "Tuesday",
+      "3": "Wednesday",
+      "4": "Thursday",
+      "5": "Friday",
+      "6": "Saturday",
+      "7": "Sunday"
+    }
+  },
+  "attendance": {
+    "today": "Today’s attendance",
+    "present": "Present",
+    "late": "Late",
+    "absent": "Absent"
+  },
+  "payments": {
+    "soon": "Payments and debt tracking are in development."
+  }
+}
